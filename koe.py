@@ -47,7 +47,10 @@ def empty_message(bot, update):
 
 def where(bot, update):
     update.message.reply_text('Vivo en el despacho 120 de la Facultad de Informatica de la Universidad Complutense de Madrid ☺')
-
+    dataSc_links=["https://www.datasciencecentral.com/","https://www.reddit.com/r/datascience/","https://news.google.com/search?q=data+science&hl=en-US&gl=US&ceid=US:en","https://www.kdnuggets.com/websites/blogs.html","http://blog.kaggle.com/"]
+    for x in dataSc_links:
+         bot.send_message(chat_id=update.message.chat_id, text=x)
+        
 def error(bot, update, error):
     """Log Errors caused by Updates."""
     logger.warning('Update "%s" caused error "%s"', update, error)
